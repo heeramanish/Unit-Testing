@@ -9,19 +9,37 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MusicianUnitTest {
+
+
     private Musician musician;
-/*
+
     @BeforeEach
-    void setUp() {
-        musician = new Musician(name: Jim, lastName: Morrison);
+    public void setUp() {
+      try{
+          musician = new Musician("Jim Morrison");
+      }
+     catch (Exception e){
+        e.printStackTrace();
+    }
+
     }
 
     @Test
-    @DisplayName("Name cannot be null")
-    public void MusicianNameCannotBeNull
-        {
-        assertThrows(NullPointerException.class,() -> musician.setName(null));
-        }
+    @DisplayName("Musician name cannot be null")
+    public void musicianNameCannotBeNull()
+    {
+        assertThrows(NullPointerException.class, () -> musician.setName(null));
+    }
 
-*/
+    @Test
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "    \t"})
+    @DisplayName("Musician name cannot be empty or blank")
+    public void musicianNameCannotBeEmptyOrBlank(String argm)
+    {
+        assertThrows(IllegalArgumentException.class, () -> musician.setName(argm));
+    }
+
+
+
 }

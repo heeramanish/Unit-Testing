@@ -32,7 +32,8 @@ public class Album extends Entity {
 
     private List<String> tracks;
 
-    public Album(int releaseYear, String recordNumber, String albumName) {
+    public Album(int releaseYear, String recordNumber, String albumName)
+    {
         notNull(recordNumber);
         notNull(albumName);
 
@@ -67,8 +68,9 @@ public class Album extends Entity {
         return featuredMusicians;
     }
 
-    public void setFeaturedMusicians(Set<Musician> featuredMusicians)
+    public void setFeaturedMusicians(Set<Musician> featuredMusicians) throws Exception
     {
+        notEmpty(featuredMusicians);
         this.featuredMusicians = featuredMusicians;
     }
 
@@ -77,8 +79,9 @@ public class Album extends Entity {
         return instruments;
     }
 
-    public void setInstruments(Set<MusicianInstrument> instruments)
+    public void setInstruments(Set<MusicianInstrument> instruments) throws Exception
     {
+        notEmpty(instruments);
         this.instruments = instruments;
     }
 

@@ -59,7 +59,7 @@ class AlbumUnitTest {
         assertFalse(actual);
        // assertThrows(NullPointerException.class, () -> album.setReleaseYear(0));
     }
-    
+
     @Test
     @DisplayName("releaseYear must be four digit")
     public void checkReleaseYearFourDigit()
@@ -118,7 +118,23 @@ class AlbumUnitTest {
         }
 
 
+    // ########## set<Musician> ##############
+    @Test
+    //@ParameterizedTest
+    @DisplayName("FeaturedMusicians can;t be null")
+    public void featuredMusicianCannotBeNull() throws IllegalArgumentException
+    {
+        assertThrows(NullPointerException.class,() -> album.setFeaturedMusicians(null));
+
+    }
 
 
 
+    // ############## set<MusicianInstrument> ###############
+    @Test
+    @DisplayName("invalid input")
+    public void shouldThrowOnInvalidMusicianInstrument() throws IllegalArgumentException
+    {
+        assertThrows(NullPointerException.class, () -> album.setInstruments(null));
+    }
 }
