@@ -51,6 +51,30 @@ class AlbumUnitTest {
         assertEquals(album, album1);
     }
 
+    //############### check for releaseYear ###################
+    @Test
+    @DisplayName("Release year cannot be null")
+    public void releaseYearCannotBeNull()
+    {
+        //setup
+        int year = 0;
+        //execute
+        boolean actual = album.setReleaseYear(year);
+        assertFalse(actual);
+       // assertThrows(NullPointerException.class, () -> album.setReleaseYear(0));
+    }
+    
+    @Test
+    @DisplayName("releaseYear must be four digit")
+    public void checkReleaseYearFourDigit()
+    {
+        int year = 1975;
+        album.setReleaseYear(year);
+        int yearLength= String.valueOf(year).length();
+        assertEquals(yearLength,4);
+
+    }
+
     // ############# Check for RecordNumber ##################
     @Test
     @DisplayName("Same Record name means same album")
@@ -67,13 +91,13 @@ class AlbumUnitTest {
         assertThrows(NullPointerException.class, () -> album.setRecordNumber(null));
     }
 
-
     @Test
+    @ParameterizedTest
     @ValueSource(strings = {"", " ", "    \t"})
     @DisplayName("RecordNumber cannot be empty/blank")
-    public void RecordNumberCannotBeEmptyOrBlank(String str)
+    public void RecordNumberCannotBeEmptyOrBlank(String arg)
     {
-        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber(str));
+        assertThrows(IllegalArgumentException.class, () -> album.setRecordNumber(arg));
     }
 
     //################ Album URL check  ################
@@ -92,7 +116,7 @@ class AlbumUnitTest {
         {
         List<String> actual = Arrays.asList("Köln, Jan 24 1975, PART I","Köln, Jan 24 1975, PART II A","Köln, Jan 24 1975, PART II B");
         List<String> expected = Arrays.asList("Köln, Jan 24 1975, PART I","Köln, Jan 24 1975, PART II A","Köln, Jan 24 1975, PART II B");
-
+      //  List<String> result = album.setTracks();
         assertEquals(expected, actual);
 
         }
