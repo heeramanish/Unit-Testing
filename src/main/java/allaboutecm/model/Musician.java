@@ -22,17 +22,24 @@ public class Musician extends Entity {
     private Set<Album> albums;
 
     public Musician(String name) {
+
+        notNull(name);
         this.name = name;
         this.musicianUrl = null;
 
         albums = Sets.newLinkedHashSet();
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
+        notNull(name);
+        notBlank(name);
+
         this.name = name;
     }
 
