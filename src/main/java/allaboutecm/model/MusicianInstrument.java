@@ -30,6 +30,8 @@ public class MusicianInstrument extends Entity {
     }
 
     public void setMusician(Musician musician) {
+        // Checking musician is not Null
+        notNull(musician, "Musician Cannot Be Null");
         this.musician = musician;
     }
 

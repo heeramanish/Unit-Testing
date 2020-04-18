@@ -43,7 +43,6 @@ class AlbumUnitTest {
     public void sameNameAndNumberMeansSameAlbum()
     {
         Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
-
         assertEquals(album, album1);
     }
 
@@ -121,7 +120,7 @@ class AlbumUnitTest {
     // ########## set<Musician> ##############
     @Test
     //@ParameterizedTest
-    @DisplayName("FeaturedMusicians can;t be null")
+    @DisplayName("FeaturedMusicians can't be null")
     public void featuredMusicianCannotBeNull() throws IllegalArgumentException
     {
         assertThrows(NullPointerException.class,() -> album.setFeaturedMusicians(null));
