@@ -120,7 +120,6 @@ public class Album extends Entity {
         notNull(releaseYear);
         this.releaseYear = releaseYear;
         return false;
-
     }
 
     public String getAlbumName()
