@@ -27,33 +27,5 @@ class TrackUnitTest {
         assertThrows(NullPointerException.class, () -> track.setTrackLength(null));
     }
 
-    @Test
-    @DisplayName("Track genre cannot be null")
-    public void trackGenreCannotBeNull() {
-        assertThrows(NullPointerException.class, () -> track.setTrackGenre(null));
-    }
 
-    @Test
-    @DisplayName("Track style cannot be null")
-    public void trackStyleCannotBeNull() {
-        assertThrows(NullPointerException.class, () -> track.setTrackStyle(null));
-    }
-
-    @Test
-    @DisplayName("Track release format cannot be null")
-    public void trackReleaseFormatCannotBeNull() {
-        assertThrows(NullPointerException.class, () -> track.setTrackReleaseFormat(null));
-    }
-
-    @Test
-    @DisplayName("Track release review cannot be null")
-    public void trackReviewCannotBeNull() {
-        assertThrows(NullPointerException.class, () -> track.setTrackReview(null));
-    }
-
-    @Test
-    @DisplayName("Track rating format cannot be null")
-    public void trackRatingCannotBeNull() {
-        assertThrows(NullPointerException.class, () -> track.setTrackRating(null));
-    }
 }

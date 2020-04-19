@@ -147,4 +147,34 @@ class AlbumUnitTest {
         Matcher matcher = URL_PATTERN.matcher(url);
         return matcher.matches();
     }
+
+    @Test
+    @DisplayName("Album genre cannot be null")
+    public void albumGenreCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> album.setAlbumGenre(null));
+    }
+
+    @Test
+    @DisplayName("Album style cannot be null")
+    public void albumStyleCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> album.setAlbumStyle(null));
+    }
+
+    @Test
+    @DisplayName("Album release format cannot be null")
+    public void albumReleaseFormatCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> album.setAlbumReleaseFormat(null));
+    }
+
+    @Test
+    @DisplayName("Album release review cannot be null")
+    public void albumReviewCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> album.setAlbumReview(null));
+    }
+
+    @Test
+    @DisplayName("Album rating format cannot be null")
+    public void albumRatingCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> album.setAlbumRating(null));
+    }
 }

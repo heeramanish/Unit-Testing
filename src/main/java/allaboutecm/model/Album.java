@@ -32,6 +32,12 @@ public class Album extends Entity {
 
     private List<Track> tracks;
 
+    private String albumGenre;
+    private String albumStyle;
+    private String albumReleaseFormat;
+    private String albumReview;
+    private Double albumRating;
+
     public Album(int releaseYear, String recordNumber, String albumName)
     {
         notNull(recordNumber);
@@ -143,6 +149,51 @@ public class Album extends Entity {
         return releaseYear == album.releaseYear &&
                 recordNumber.equals(album.recordNumber) &&
                 albumName.equals(album.albumName);
+    }
+
+    public String getAlbumGenre() {
+        return albumGenre;
+    }
+
+    public void setAlbumGenre(String albumGenre) {
+        notNull(albumGenre);
+        this.albumGenre = albumGenre;
+    }
+
+    public String getAlbumStyle() {
+        return albumStyle;
+    }
+
+    public void setAlbumStyle(String albumStyle) {
+        notNull(albumStyle);
+        this.albumStyle = albumStyle;
+    }
+
+    public String getAlbumReleaseFormat() {
+        return albumReleaseFormat;
+    }
+
+    public void setAlbumReleaseFormat(String albumReleaseFormat) {
+        notNull(albumReleaseFormat);
+        this.albumReleaseFormat = albumReleaseFormat;
+    }
+
+    public String getAlbumReview() {
+        return albumReview;
+    }
+
+    public void setAlbumReview(String albumReview) {
+        notNull(albumReview);
+        this.albumReview = albumReview;
+    }
+
+    public Double getAlbumRating() {
+        return albumRating;
+    }
+
+    public void setAlbumRating(Double albumRating) {
+        notNull(albumRating);
+        this.albumRating = albumRating;
     }
 
     @Override
