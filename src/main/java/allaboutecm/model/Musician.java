@@ -6,8 +6,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.Set;
 
-import static org.apache.commons.lang3.Validate.notBlank;
-import static org.apache.commons.lang3.Validate.notNull;
+import static org.apache.commons.lang3.Validate.*;
 
 /**
  * An artist that has been featured in (at least) one ECM record.
@@ -47,7 +46,9 @@ public class Musician extends Entity {
         return albums;
     }
 
-    public void setAlbums(Set<Album> albums) {
+    public void setAlbums(Set<Album> albums) throws Exception
+    {
+        notEmpty(albums);
         this.albums = albums;
     }
 

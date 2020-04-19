@@ -91,7 +91,6 @@ public class Album extends Entity {
 
     public void setAlbumURL(URL albumURL)
     {
-       // notBlank(albumURL);
         notNull(albumURL);
         this.albumURL = albumURL;
     }
@@ -103,7 +102,6 @@ public class Album extends Entity {
 
     public void setTracks(List<String> tracks)
     {
-      //  List<String> actual = Arrays.asList("Köln, Jan 24 1975, PART I","Köln, Jan 24 1975, PART II A","Köln, Jan 24 1975, PART II B";
 
         noNullElements(tracks);
         notEmpty(tracks);

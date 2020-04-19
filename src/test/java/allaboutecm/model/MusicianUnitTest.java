@@ -48,4 +48,11 @@ class MusicianUnitTest {
         });
     }
 
+    @Test
+    @DisplayName("validating album set for null")
+    public void AlbumCannotBeNull() throws IllegalArgumentException
+    {
+     assertThrows(NullPointerException.class,()-> musician.setAlbums(null))   ;
+    }
+
 }
