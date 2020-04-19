@@ -21,15 +21,10 @@ public class Album extends Entity {
     private int releaseYear;
 
     private String recordNumber;
-
     private String albumName;
-
     private Set<Musician> featuredMusicians;
-
     private Set<MusicianInstrument> instruments;
-
     private URL albumURL;
-
     private List<Track> tracks;
 
     private String albumGenre;

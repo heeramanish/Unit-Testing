@@ -49,6 +49,13 @@ class MusicianUnitTest {
     }
 
     @Test
+    @DisplayName("URL should be valid")
+    public void urlShouldBeValid() throws IllegalArgumentException {
+        url = "https://www.google.com.au";
+        assertTrue(urlValidator(url));
+    }
+
+    @Test
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "    \t"})
     @DisplayName("Musician name cannot be empty or blank")
@@ -65,9 +72,11 @@ class MusicianUnitTest {
     }
 
     @Test
-    @DisplayName("validating album set for null")
-    public void AlbumCannotBeNull() throws IllegalArgumentException {
-        assertThrows(NullPointerException.class, () -> musician.setAlbums(null));
+    @DisplayName("MusicianWebsiteURL cannot be null")
+    public void MusicianWebsiteUrlCannotBeNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> {
+            this.musician.setMusicianWebsite((URL) null);
+        });
     }
 
     // method to validate the url

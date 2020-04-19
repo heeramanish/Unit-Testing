@@ -18,6 +18,8 @@ public class Musician extends Entity {
 
     private URL musicianUrl;
 
+    private URL musicianWebsite;
+
     private Set<Album> albums;
 
     public Musician(String name) {
@@ -34,11 +36,19 @@ public class Musician extends Entity {
         return name;
     }
 
+    public URL getMusicianWebsite() {
+        return musicianWebsite;
+    }
+
+    public void setMusicianWebsite(URL musicianWebsite) {
+        notNull(musicianWebsite);
+        this.musicianWebsite = musicianWebsite;
+    }
+
     public void setName(String name)
     {
         notNull(name);
         notBlank(name);
-
         this.name = name;
     }
 
