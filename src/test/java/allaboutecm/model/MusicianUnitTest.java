@@ -18,19 +18,17 @@ class MusicianUnitTest {
 
     @BeforeEach
     public void setUp() {
-      try{
-          musician = new Musician("Jim Morrison");
-      }
-     catch (Exception e){
-        e.printStackTrace();
-    }
+        try {
+            musician = new Musician("Jim Morrison");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Test
     @DisplayName("Musician name cannot be null")
-    public void musicianNameCannotBeNull()
-    {
+    public void musicianNameCannotBeNull() {
         assertThrows(NullPointerException.class, () -> musician.setName(null));
     }
 
@@ -38,8 +36,7 @@ class MusicianUnitTest {
     @ParameterizedTest
     @ValueSource(strings = {"", " ", "    \t"})
     @DisplayName("Musician name cannot be empty or blank")
-    public void musicianNameCannotBeEmptyOrBlank(String argm)
-    {
+    public void musicianNameCannotBeEmptyOrBlank(String argm) {
         assertThrows(IllegalArgumentException.class, () -> musician.setName(argm));
     }
 
@@ -47,7 +44,7 @@ class MusicianUnitTest {
     @DisplayName("MusicianURL cannot be null")
     public void MusicianUrlCannotBeNull() {
         Assertions.assertThrows(NullPointerException.class, () -> {
-            this.musician.setMusicianUrl((URL)null);
+            this.musician.setMusicianUrl((URL) null);
         });
     }
 

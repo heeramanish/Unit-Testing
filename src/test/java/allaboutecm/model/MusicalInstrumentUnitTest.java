@@ -19,7 +19,7 @@ class MusicalInstrumentUnitTest {
 
     @DisplayName("Musical Instrument Should Not Be Null")
     @Test
-    public void musicalInstrumentShouldNotBeNull (){
+    public void musicalInstrumentShouldNotBeNull() {
         NullPointerException exception = assertThrows(NullPointerException.class, () -> musicalInstrument.setName(null));
         assertEquals("Musical Instrument Cannot Be Null", exception.getMessage());
     }
