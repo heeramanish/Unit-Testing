@@ -8,6 +8,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,10 +17,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class AlbumUnitTest {
+    private static final String URL_REGEX =
+            "^((((https?|ftps?|gopher|telnet|nntp)://)|(mailto:|news:))" +
+                    "(%[0-9A-Fa-f]{2}|[-()_.!~*';/?:@&=+$,A-Za-z0-9])+)" +
+                    "([).!';/?:,][[:blank:]])?$";
+
+    private static final Pattern URL_PATTERN = Pattern.compile(URL_REGEX);
+    private String url;
     private Album album;
 
     @BeforeEach
     public void setUp() {
+        url = "https://www.google.com.au";
         album = new Album(1975, "ECM 1064/65", "The Köln Concert");
     }
 
@@ -115,11 +125,27 @@ class AlbumUnitTest {
 
     }
 
+    @Test
+    @DisplayName("URL should be valid")
+    public void urlShouldBeValid() throws IllegalArgumentException {
+        url = "https://www.google.com.au";
+        assertTrue(urlValidator(url));
+    }
 
     // ############## set<MusicianInstrument> ###############
     @Test
     @DisplayName("invalid input")
     public void shouldThrowOnInvalidMusicianInstrument() throws IllegalArgumentException {
         assertThrows(NullPointerException.class, () -> album.setInstruments(null));
+    }
+
+    // method to validate the url
+    public static boolean urlValidator(String url) {
+
+        if (url == null) {
+            return false;
+        }
+        Matcher matcher = URL_PATTERN.matcher(url);
+        return matcher.matches();
     }
 }

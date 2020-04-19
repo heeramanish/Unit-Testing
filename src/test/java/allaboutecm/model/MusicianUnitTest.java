@@ -8,18 +8,26 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MusicianUnitTest {
+    private static final String URL_REGEX =
+            "^((((https?|ftps?|gopher|telnet|nntp)://)|(mailto:|news:))" +
+                    "(%[0-9A-Fa-f]{2}|[-()_.!~*';/?:@&=+$,A-Za-z0-9])+)" +
+                    "([).!';/?:,][[:blank:]])?$";
 
-
+    private static final Pattern URL_PATTERN = Pattern.compile(URL_REGEX);
+    private String url;
     private Musician musician;
 
     @BeforeEach
     public void setUp() {
         try {
             musician = new Musician("Jim Morrison");
+            url = "https://www.google.com.au";
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,10 +65,25 @@ class MusicianUnitTest {
     }
 
     @Test
-    @DisplayName("validating album set for null")
-    public void AlbumCannotBeNull() throws IllegalArgumentException
-    {
-     assertThrows(NullPointerException.class,()-> musician.setAlbums(null))   ;
+    @DisplayName("URL should be valid")
+    public void urlShouldBeValid() throws IllegalArgumentException {
+        url = "https://www.google.com.au";
+        assertTrue(urlValidator(url));
     }
 
+    @Test
+    @DisplayName("validating album set for null")
+    public void AlbumCannotBeNull() throws IllegalArgumentException {
+        assertThrows(NullPointerException.class, () -> musician.setAlbums(null));
+    }
+
+    // method to validate the url
+    public static boolean urlValidator(String url) {
+
+        if (url == null) {
+            return false;
+        }
+        Matcher matcher = URL_PATTERN.matcher(url);
+        return matcher.matches();
+    }
 }
