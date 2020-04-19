@@ -26,6 +26,14 @@ class MusicianUnitTest {
 
     }
 
+
+    @Test
+    @DisplayName("Musician name should contain both the first and last names")
+    public void musicianNameShouldContainBothTheFirstAndLastNames() {
+        assertTrue(musician.getName().contains(" "));
+    }
+
+
     @Test
     @DisplayName("Musician name cannot be null")
     public void musicianNameCannotBeNull() {
