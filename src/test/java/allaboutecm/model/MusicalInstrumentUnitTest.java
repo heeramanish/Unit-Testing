@@ -21,6 +21,13 @@ class MusicalInstrumentUnitTest {
     @Test
     public void musicalInstrumentShouldNotBeNull() {
         NullPointerException exception = assertThrows(NullPointerException.class, () -> musicalInstrument.setName(null));
-        assertEquals("Musical Instrument Cannot Be Null", exception.getMessage());
+        assertEquals("Musical Instrument Cannot Be Null or Empty", exception.getMessage());
+    }
+
+    @DisplayName("Musical Instrument Should Not Be Empty")
+    @Test
+    public void musicalInstrumentShouldNotBeEmpty() {
+        NullPointerException exception = assertThrows(NullPointerException.class, () -> musicalInstrument.setName(null));
+        assertEquals("Musical Instrument Cannot Be Null or Empty", exception.getMessage());
     }
 }

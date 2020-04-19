@@ -141,7 +141,6 @@ class AlbumUnitTest {
 
     // method to validate the url
     public static boolean urlValidator(String url) {
-
         if (url == null) {
             return false;
         }

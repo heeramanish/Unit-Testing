@@ -30,7 +30,7 @@ public class Album extends Entity {
 
     private URL albumURL;
 
-    private List<String> tracks;
+    private List<Track> tracks;
 
     public Album(int releaseYear, String recordNumber, String albumName)
     {
@@ -95,12 +95,12 @@ public class Album extends Entity {
         this.albumURL = albumURL;
     }
 
-    public List<String> getTracks()
+    public List<Track> getTracks()
     {
         return tracks;
     }
 
-    public void setTracks(List<String> tracks)
+    public void setTracks(List<Track> tracks)
     {
 
         noNullElements(tracks);

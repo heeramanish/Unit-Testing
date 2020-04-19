@@ -19,7 +19,7 @@ public class MusicalInstrument extends Entity {
     }
 
     public void setName(String name) {
-        notNull(name, "Musical Instrument Cannot Be Null");
+        notNull(name, "Musical Instrument Cannot Be Null or Empty");
         this.name = name;
     }
 
