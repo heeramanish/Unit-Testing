@@ -1,10 +1,13 @@
 package allaboutecm.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,6 +43,12 @@ class MusicianUnitTest {
         assertThrows(IllegalArgumentException.class, () -> musician.setName(argm));
     }
 
-
+    @Test
+    @DisplayName("MusicianURL cannot be null")
+    public void MusicianUrlCannotBeNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> {
+            this.musician.setMusicianUrl((URL)null);
+        });
+    }
 
 }

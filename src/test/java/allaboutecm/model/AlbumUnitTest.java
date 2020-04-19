@@ -81,14 +81,15 @@ class AlbumUnitTest {
     }
 
     @Test
+    //@ParameterizedTest
     @DisplayName("RecordNumber cannot be null")
     public void RecordNumberCannotBeNull() {
         assertThrows(NullPointerException.class, () -> album.setRecordNumber(null));
     }
 
-    @Test
+
     @ParameterizedTest
-    @ValueSource(strings = {"", " ", "    \t"})
+    @ValueSource(strings =  {"", " ", "    \t"})
     @DisplayName("RecordNumber cannot be empty/blank")
     public void RecordNumberCannotBeEmptyOrBlank(String arg)
     {

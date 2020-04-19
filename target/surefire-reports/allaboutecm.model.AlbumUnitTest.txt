@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: allaboutecm.model.AlbumUnitTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.447 s <<< FAILURE! - in allaboutecm.model.AlbumUnitTest
-allaboutecm.model.AlbumUnitTest.RecordNumberCannotBeEmptyOrBlank(String)  Time elapsed: 0.004 s  <<< ERROR!
+Tests run: 17, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.231 s <<< FAILURE! - in allaboutecm.model.AlbumUnitTest
+allaboutecm.model.AlbumUnitTest.RecordNumberCannotBeEmptyOrBlank(String)  Time elapsed: 0.003 s  <<< ERROR!
 org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [public void allaboutecm.model.AlbumUnitTest.RecordNumberCannotBeEmptyOrBlank(java.lang.String)].
 

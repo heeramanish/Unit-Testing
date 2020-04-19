@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: allaboutecm.model.MusicianUnitTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.074 s <<< FAILURE! - in allaboutecm.model.MusicianUnitTest
+allaboutecm.model.MusicianUnitTest.musicianNameCannotBeEmptyOrBlank(String)  Time elapsed: 0.002 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [java.lang.String arg0] in method [public void allaboutecm.model.MusicianUnitTest.musicianNameCannotBeEmptyOrBlank(java.lang.String)].
+

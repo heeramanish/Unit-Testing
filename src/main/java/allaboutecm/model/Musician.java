@@ -60,15 +60,19 @@ public class Musician extends Entity {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(name);
     }
 
-    public URL getMusicianUrl() {
+    public URL getMusicianUrl()
+    {
         return musicianUrl;
     }
 
-    public void setMusicianUrl(URL musicianUrl) {
+    public void setMusicianUrl(URL musicianUrl)
+    {
+        notNull(musicianUrl);
         this.musicianUrl = musicianUrl;
     }
 }
