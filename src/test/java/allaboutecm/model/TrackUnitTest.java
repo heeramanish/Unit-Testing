@@ -9,12 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class TrackUnitTest {
 
     private Track track;
-    private Double trackLength;
-    private String trackGenre;
-    private String trackStyle;
-    private String trackReleaseFormat;
-    private String trackReview;
-    private Double trackRating;
 
     @BeforeEach
     public void setUp() {
