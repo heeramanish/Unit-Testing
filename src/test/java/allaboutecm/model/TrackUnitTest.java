@@ -12,7 +12,7 @@ class TrackUnitTest {
 
     @BeforeEach
     public void setUp() {
-        track = new Track();
+        track = new Track("Malang", 4.8);
     }
 
     @Test
