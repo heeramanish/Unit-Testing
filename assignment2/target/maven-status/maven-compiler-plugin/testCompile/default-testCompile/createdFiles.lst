@@ -1,0 +1,4 @@
+allaboutecm/mining/ECMMinerUnitTest.class
+allaboutecm/model/AlbumUnitTest.class
+allaboutecm/dataaccess/neo4j/Neo4jDAOUnitTest.class
+allaboutecm/mining/ECMMinerIntegrationTest.class
