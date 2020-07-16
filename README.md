@@ -5,3 +5,5 @@ Similarly, the parameters for setter methods for non-null and non-empty attribut
 
 
 ![](Images/pic_1.png)
+![](Images/pic_2.png)
+
